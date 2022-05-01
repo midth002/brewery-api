@@ -1,0 +1,24 @@
+Welcome Screen:
+    -background base color: solid
+    -banner in center, horizontally: contains beer mug gif
+    -Title: "Fuzzy Search Your Breweries"
+            1.large container-bckgrnd color
+            2.img src/animation src; banner type 
+            3. XL heading size for Title
+
+
+Brewery Search/Current Weather Screen:
+    -2 large containers; side by side;
+        *box; display flex
+    -img div for each container
+        *variable to interchange images for beer by brew type
+        *variable to interchange images for weather icons by weather conditions
+    -parent div container for API information to display in
+        *brewResultContent
+        *weatherResultContent
+    -"star as your favorite" for local storage
+        <label class="checkbox">
+        <input type="checkbox">
+             Remember me
+        </label>
+

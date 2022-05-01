@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Search Results</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/results.css">
+</head>
+<body>
+   <div class="is-flex">
+    <div class="has-background-grey">
+      <!-- <form class="box" id="brewContainer"> -->
+      <div class="has-background-grey">
+        <form class="box" id="brewContainer">
+          <div class="field">
+            <label class="label"></label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Search Breweries">
+              <span class="columns">
+              <button class="column is-warning is-2 pr-1 pl-1 pb-1 pt-1 button is-rounded ml-4 mt-4 is-medium is-primary has-text-weight-bold" id="city-button">Search</button>
+              <button class="column is-warning is-2 pr-1 pl-1 pb-1 pt-1 button is-rounded mt-4 ml-2 button-location is-medium is-primary has-text-centered has-text-weight-bold" id="location-button">Near Me</button>
+              <div class="select column is-5 mt-2">
+                <select id="brewTypeOption">
+                  <option value="" disabled selected>Filter by Type of Brewery</option>
+                  <option value="micro">Micro</option>
+                  <option value="nano">Nano</option>
+                  <option value="regional">Regional</option>
+                  <option value="brewpub">Brewpub</option>
+                  <option value="large">Large</option>
+                  <option value="bar">Bar</option>
+                  <option value="planning">Planning</option>
+                  <option value="contract">Contract</option>
+                  <option value="all">All</option>
+                </select>
+                
+                
+              </div>
+              <button class="column is-warning is-2 pl-1 pr-1 pt-1 pb-1 mt-4 is-rounded s-modal-trigger button is-primary is-medium has-text-weight-bold" data-target="modal-custom" id="favorite-btn">
+                Favorites
+              </button>
+            </span>
+              <div class="brewData has-text-centered">
+                  <h3 id="brew-data-number-results"></h3>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <section >
+      </section>
+    </div>
+    <div class="column" id="entireBox">
+      <div class="box">
+      <h1 class="weatherHeader">Weather Conditions</h1>
+      <section id="weatherContainer">
+          <div class="weatherData"></div>
+          <div class="forecastData"></div>
+          </div>
+      </section>
+    </div>
+  </div>  
+    </div>  
+      <section>
+       
+      </section>
+      <div id="modal-custom" class="modal custom-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box" id="favorite-box">
+            <p>Your Favorites</p>
+            <!-- Your content -->
+
+           
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+   
+    <script src="./assets/js/script.js"></script>
+    
+</body>
+</html>
