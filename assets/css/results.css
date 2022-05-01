@@ -1,13 +1,9 @@
 body {
-    background-image: url("https://i.pinimg.com/564x/9c/a8/8b/9ca88b610259718bc6107c32a9011385.jpg");
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* min-height: 100vh; */
+    background-color: rgb(240, 236, 236);
     text-transform: capitalize;
 }
 #entireBox {
-    border: brown 15px solid;
+    
     position: sticky;
     top: 20px;
     align-self: flex-start;
@@ -16,7 +12,7 @@ h1 {
     font-size: 3rem;
     font-weight: bolder;
     text-align: center;
-    border: 15px dotted brown;
+    
     font-family: 'Monoton';
 }
 h2 {
@@ -72,7 +68,7 @@ li {
 }
 
 #entireBox {
-    border: brown 15px solid;
+    
     position: sticky;
     top: 50px;
     align-self: flex-start;
@@ -82,4 +78,24 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(240, 236, 236);
+    margin-bottom: 25px;
+}
+
+.navbar img {
+    height: 90px;
+}
+
+.navbar-item img {
+    max-height: 4.5rem;
+}
+
+#brewContainer {
+    margin: 100px 25px;
 }

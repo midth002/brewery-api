@@ -283,27 +283,16 @@ function weatherOneCall(lat, lon, name) {
                return response.json();
            })
             .then(function (data) {
-                var sunset = data.current.sunset
+              
 
                  // Current weather element created
                  var currentDiv = $('<div>').addClass("weatherCard");
                  var weatherTitle = $('<h4>')
                  var iconSpan = $('<span>')
                  var currentWeatherIcon = $('<i>')
-                 var currentUl = $('<ul>')
-                 var tempLi = $("<li>")
-                 var windLi = $("<li>")
-                 var humLi = $("<li>")
-                 var uvLi = $("<li>")
-                 var sunsetLi = $("<li>")
-
-                // Add text to weather elements
-                 weatherTitle.text("Currently in " + name + "  ")
-                 tempLi.text("Temp: " + data.current.temp.toFixed() + "°F")
-                 windLi.text("Wind: " + data.current.wind_speed.toFixed() + " MPH")
-                 humLi.text("Humidity: " + data.current.humidity + "%")
-                 uvLi.text("UV Index: " + data.current.uvi)
-                 sunsetLi.text("Sunset: " + convertUnixTime(sunset))
+                
+               
+                 
                  currentWeatherIcon.html("<img src='https://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
                  
                 currentWeatherIcon.attr("style", "margin-top: 12px;")
@@ -313,8 +302,8 @@ function weatherOneCall(lat, lon, name) {
                 // Append elements to the weathercontainer
                 iconSpan.append(currentWeatherIcon);
                 weatherTitle.append(iconSpan)
-                currentUl.append(tempLi, windLi, humLi, uvLi, sunsetLi)
-                currentDiv.append(weatherTitle, currentUl)
+               
+                currentDiv.append(weatherTitle)
                 weatherData.append(currentDiv)
                 weatherContainer.append(weatherData)
                
