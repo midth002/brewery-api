@@ -9,7 +9,7 @@ var locationButton = $("#location-button")
 var checkboxes = $('input[type=checkbox')
 
 var apiKey = "385e58697effddc1169cee4d7d6e5489"
-var perPage = "5"
+var perPage = "4"
 
 var favoriteArray ;
 var storedFavorites
@@ -17,6 +17,13 @@ var duplicateFavorite = false;
 
 var favoriteLabel = $("<label class='checkbox'>")
 var favoriteInput = $("<input type='checkbox' class='favorite'>")
+
+var websiteIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+</svg>`; 
+
+var directionsIcon = `<svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20"  fill="green" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M502.61 233.32L278.68 9.39c-12.52-12.52-32.83-12.52-45.36 0L9.39 233.32c-12.52 12.53-12.52 32.83 0 45.36l223.93 223.93c12.52 12.53 32.83 12.53 45.36 0l223.93-223.93c12.52-12.53 12.52-32.83 0-45.36zm-100.98 12.56l-84.21 77.73c-5.12 4.73-13.43 1.1-13.43-5.88V264h-96v64c0 4.42-3.58 8-8 8h-32c-4.42 0-8-3.58-8-8v-80c0-17.67 14.33-32 32-32h112v-53.73c0-6.97 8.3-10.61 13.43-5.88l84.21 77.73c3.43 3.17 3.43 8.59 0 11.76z"/></svg>`
 
 function init() {
     getLocalStorage();
@@ -178,11 +185,12 @@ function filterDistApi(lat, lon, type) {
 function createBrewCard(data) {
     for (i=0; i < data.length; i++) {
                 
-        var brewDiv = $('<div>').addClass("brewCard column");
+        var brewDiv = $('<div>').addClass("brewCard column box");
         var headingDiv = $('<div>').addClass("brewHeading")
         var brewName = $("<h3>").addClass("brewName");
         var favoriteLabel = $("<label class='checkbox'>")
         var favoriteInput = $("<input type='checkbox' class='favorite'>")
+        var directionsLink = $("<a>")
        
         var ul = $('<ul>');
         var li1 = $('<li>');
@@ -190,12 +198,14 @@ function createBrewCard(data) {
         var li3 = $('<li class="brew-city">');
         var li5 = $('<li class="brew-list-link">'); 
         var brewLink = $('<a class="brew-link">');
-        brewLink.attr("href" , data[i].website_url)
-        brewLink.text("Visit Website");
+        brewLink.attr("href" , data[i].website_url);
+        
+        brewLink.append(websiteIcon);
+        directionsLink.append(directionsIcon)
 
         brewName.text(data[i].name);
         favoriteLabel.text("Favorites ")
-        li1.text("Brewery Type: " + data[i].brewery_type);
+        li1.text(data[i].brewery_type);
         li3.text(data[i].city + " " + data[i].state);
         
         
@@ -203,7 +213,7 @@ function createBrewCard(data) {
         //ul.children().attr("style", "position: center")
 
         favoriteLabel.append(favoriteInput);
-        li5.append(brewLink);
+        li5.append(brewLink, directionsLink);
         ul.append(li1, li3, li5);
         headingDiv.append(brewName, favoriteLabel)
         brewDiv.append(headingDiv, ul);
