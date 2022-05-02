@@ -9,7 +9,7 @@ var locationButton = $("#location-button")
 var checkboxes = $('input[type=checkbox')
 
 var apiKey = "385e58697effddc1169cee4d7d6e5489"
-var perPage = "50"
+var perPage = "5"
 
 var favoriteArray ;
 var storedFavorites
@@ -178,15 +178,15 @@ function filterDistApi(lat, lon, type) {
 function createBrewCard(data) {
     for (i=0; i < data.length; i++) {
                 
-        var brewDiv = $('<div>').addClass("brewCard");
+        var brewDiv = $('<div>').addClass("brewCard column");
         var headingDiv = $('<div>').addClass("brewHeading")
-        var brewName = $("<h3>");
+        var brewName = $("<h3>").addClass("brewName");
         var favoriteLabel = $("<label class='checkbox'>")
         var favoriteInput = $("<input type='checkbox' class='favorite'>")
        
         var ul = $('<ul>');
         var li1 = $('<li>');
-        var li2 = $('<li class="brew-street">');
+        
         var li3 = $('<li class="brew-city">');
         var li5 = $('<li class="brew-list-link">'); 
         var brewLink = $('<a class="brew-link">');
@@ -196,18 +196,15 @@ function createBrewCard(data) {
         brewName.text(data[i].name);
         favoriteLabel.text("Favorites ")
         li1.text("Brewery Type: " + data[i].brewery_type);
-        li2.text("Street Address: " + data[i].street);
         li3.text(data[i].city + " " + data[i].state);
         
         
-        brewName.attr("style", "font-size: 2rem", "font-weight: bolder");
-        headingDiv.addClass('has-background-grey');
-        brewDiv.attr("style", "border: 5px dotted gold; margin: 10px; width: 100%; padding: 10px;");
+        
         //ul.children().attr("style", "position: center")
 
         favoriteLabel.append(favoriteInput);
         li5.append(brewLink);
-        ul.append(li1, li2, li3, li5);
+        ul.append(li1, li3, li5);
         headingDiv.append(brewName, favoriteLabel)
         brewDiv.append(headingDiv, ul);
         brewData.append(brewDiv);

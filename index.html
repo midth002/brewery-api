@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beer Search Results</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <title>Brewery API Engine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/results.css">
@@ -29,8 +29,7 @@
     </div>
   
     <div id="navbarBasicExample" class="navbar-menu">
-     
-  
+
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
@@ -47,22 +46,14 @@
   </nav>
  </header>
 
-   <!-- <div class="is-flex">
-    <div class="has-background-grey">
-      <form class="box" id="brewContainer">
-       <div class="has-background-grey"> --> 
-      <section class="columns brewery-api">
-        <form class="box column" id="brewContainer">
-          <div class="field">
-            <label class="label"></label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Search Breweries">
-              <div class="columns">
-              <button class="column is-warning button is-medium is-primary has-text-weight-bold" id="city-button">Search</button>
-              <button class="column is-warning button" id="location-button">Near Me</button>
-              <div class="select column is-5 mt-2">
-                <select id="brewTypeOption">
-                  <option value="" disabled selected>Filter by Type of Brewery</option>
+
+      <section class="brewery-api is-flex box">
+            <div class="control columns is-full is-vcentered" id="brewContainer">
+              <input class="input column is-full" type="text" placeholder="Search Breweries">
+
+              <div class="column">
+                <select id="brewTypeOption" class="select ">
+                  <option value="" disabled selected>Filter by Type</option>
                   <option value="micro">Micro</option>
                   <option value="nano">Nano</option>
                   <option value="regional">Regional</option>
@@ -73,31 +64,33 @@
                   <option value="contract">Contract</option>
                   <option value="all">All</option>
                 </select>
-                
-                
               </div>
-            </div>
-              <div class="brewData has-text-centered">
-                  <h3 id="brew-data-number-results"></h3>
+              <div class="column">
+                <a class="button is-warning" id="city-button">
+                  <strong>Search</strong>
+                </a>
               </div>
+             
+              <div class="column">
+                <a class="button is-warning" id="location-button">
+                  <strong>By Location</strong>
+                </a>
+              </div>
+             
+            
             </div>
-          </div>
-        </form>
+          </section>
+         
+          <article class="columns brewData is-flex is-flex-wrap-wrap is-justify-content-space-between is-justify-content-center">
+            
+            </article>
+        
       </div>
-      <section >
-      </section>
-    </div>
+     
+      
+  
 
-    </section>
-    <div class="column" id="entireBox">
-      <div class="box">
-      <h1 class="weatherHeader">Weather</h1>
-      <section id="weatherContainer">
-          <div class="weatherData"></div>
-          <div class="forecastData"></div>
-          </div>
-      </section>
-    </div>
+   
 
      
      

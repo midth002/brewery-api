@@ -1,5 +1,9 @@
-body {
+html {
     background-color: rgb(240, 236, 236);
+}
+
+body {
+    
     text-transform: capitalize;
 }
 #entireBox {
@@ -30,12 +34,8 @@ h4 {
     margin-bottom: 2rem;
 }
 .brewData {
-    display: flex;
-    background-color: rgb(128, 128, 128);
-    margin-right: 50px;
     flex-direction: column;
-    width: 100%;
-    background-color: black;
+    width: 50%;
     padding: 20px;
     margin: 10px;
 }
@@ -43,13 +43,12 @@ h4 {
     justify-content: center;
 }
 .brewData h3 {
-    /* background-color: gray; */
+   
     padding: 5px;
-    font-size: 30px;
+    font-size: 10px;
     width: 100%;
 }
 .brewData ul {
-    background-color: white;
     padding: 10px;
     font-size: 20px;
     width: 100%;
@@ -80,6 +79,8 @@ li {
     align-items: center;
 }
 
+
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -99,3 +100,32 @@ li {
 #brewContainer {
     margin: 100px 25px;
 }
+
+.brewery-api {
+    height: 15vh;
+    
+}
+
+.select {
+    padding: 0 20px;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.brewData {
+    margin-top: 5%;
+    flex-direction: row;
+    width: 90%;
+}
+
+.brewCard {
+    border: 5px dotted gold;
+    margin: 5px; 
+    padding: 10px;
+}
+
+.brewName {
+    font-weight: bold;
+}
+
